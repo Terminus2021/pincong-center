@@ -6,8 +6,8 @@ $config['dbtype'] = 'mysql';
 $config['master'] = array (
   'charset' => 'utf8mb4',
   'host' => 'localhost',
-  'username' => 'user1',
-  'password' => '123456',
-  'dbname' => 'db',
+  'username' => '', //账户
+  'password' => '', //密码
+  'dbname' => '', //数据库名
 );
 $config['slave'] = false;
