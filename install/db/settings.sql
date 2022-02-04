@@ -8,9 +8,9 @@ INSERT INTO `aws_category` (`id`, `title`) VALUES
 
 TRUNCATE `aws_system_setting`;
 INSERT INTO `aws_system_setting` (`varname`, `value`) VALUES
-	('site_name', 's:11:"新·品葱";'),
-	('description', 's:33:"在自由的阳光下各抒己见";'),
-	('keywords', 's:31:"品葱,品蔥,pincong,新品葱";'),
+	('site_name', 's:11:"WeCenter";'),
+	('description', 's:33:"WeCenter 社交化问答平台";'),
+	('keywords', 's:31:"wecenter";'),
 	('sensitive_words', 's:0:"";'),
 	('def_focus_uids', 's:0:"";'),
 	('cache_level_high', 's:2:"60";'),
@@ -21,7 +21,7 @@ INSERT INTO `aws_system_setting` (`varname`, `value`) VALUES
 	('img_url', 's:0:"";'),
 	('upload_url', 's:8:"/uploads";'),
 	('upload_dir', 's:9:"./uploads";'),
-	('ui_style', 's:7:"pincong";'),
+	('ui_style', 's:7:"default";'),
 	('answer_unique', 's:1:"Y";'),
 	('notifications_per_page', 's:2:"20";'),
 	('contents_per_page', 's:2:"50";'),
@@ -50,12 +50,12 @@ INSERT INTO `aws_system_setting` (`varname`, `value`) VALUES
 	('default_timezone', 's:9:"Etc/GMT-8";'),
 	('new_user_notification_setting', 'a:0:{}'),
 	('register_notice', 's:231:"请勿将自身身份与其他网站相关联，切记不要使用与其他网站相同 ID 或者有关联的身份发言。\n\n由于本站不需邮箱即可注册，忘记密码将无法找回，请您妥善保管账号和密码。";'),
-	('content_url_whitelist', 's:210:"https://pincong.rocks/\nhttps://www.pincong.rocks/\nhttps://i.imgur.com/\nhttps://i.redd.it/\nhttps://media.8ch.net/\nhttps://archive.is/\nhttps://web.archive.org/\nhttps://upload.wikimedia.org/\nhttps://pbs.twimg.com/";'),
+	('content_url_whitelist', 's:210:"https://i.imgur.com/\nhttps://i.redd.it/\nhttps://media.8ch.net/\nhttps://archive.is/\nhttps://web.archive.org/\nhttps://upload.wikimedia.org/\nhttps://pbs.twimg.com/";'),
 	('random_seconds_min', 's:1:"0";'),
 	('random_seconds_max', 's:1:"1";'),
-	('currency_unit', 's:3:"葱";'),
-	('currency_name', 's:9:"游戏币";'),
-	('currency_rule_name', 's:12:"游戏规则";'),
+	('currency_unit', 's:3:"分";'),
+	('currency_name', 's:9:"积分";'),
+	('currency_rule_name', 's:12:"积分获取规则";'),
 	('time_blurring', 's:1:"Y";');
 
 
