@@ -12,8 +12,8 @@
 					<ul class="nav nav-tabs aw-nav-tabs active">
 						<li><a href="<?php echo url_rewrite(); ?>/publish/video/"><?php echo _t('影片'); ?></a></li>
 						<li class="active"><a href="<?php echo url_rewrite(); ?>/publish/article/"><?php echo _t('文章'); ?></a></li>
-						<li><a href="<?php echo url_rewrite(); ?>/publish/"><?php echo _t('问题'); ?></a></li>
-						<h2 class="hidden-xs"><i class="icon icon-ask"></i> <?php echo _t('发起'); ?></h2>
+						<li><a href="<?php echo url_rewrite(); ?>/publish/"><?php echo _t('主题'); ?></a></li>
+						<h2 class="hidden-xs"><i class="icon icon-ask"></i> <?php echo _t('发帖'); ?></h2>
 					</ul>
 					<!-- end tab 切换 -->
 					<form action="<?php echo url_rewrite(); ?>/<?php if ($this->thread_info['id']) { ?>modify/ajax/modify_article/<?php } else { ?>publish/ajax/publish_article/<?php } ?>" method="post" id="question_form" onsubmit="return false;">
@@ -54,7 +54,7 @@
 								</div>
 
 								<?php if (!$this->thread_info['id']) { ?>
-								<h3><?php echo _t('添加话题'); ?>:</h3>
+								<h3><?php echo _t('添加区块'); ?>:</h3>
 								<div class="aw-topic-bar" data-type="publish">
 									<div class="tag-bar clearfix">
 										<?php if ($_GET['topic_title']) { ?>
@@ -67,7 +67,7 @@
 										</span>
 										<?php } ?>
 
-										<span class="aw-edit-topic icon-inverse"><i class="icon icon-edit"></i> <?php echo _t('编辑话题'); ?></span>
+										<span class="aw-edit-topic icon-inverse"><i class="icon icon-edit"></i> <?php echo _t('编辑区块'); ?></span>
 									</div>
 								</div>
 
@@ -97,7 +97,7 @@
 										<?php echo _t('用这个身份发表'); ?>: <a href="<?php echo UF::url(get_anonymous_user_info($this->user_info)); ?>"><?php echo UF::name(get_anonymous_user_info($this->user_info)); ?></a></label>
 									<?php } ?>
 								</span>
-								<a class="btn btn-large btn-success btn-publish-submit" id="publish_submit" onclick="AWS.submit_form($('#question_form'), $(this)); return false;"><?php echo _t('确认发起'); ?></a>
+								<a class="btn btn-large btn-success btn-publish-submit" id="publish_submit" onclick="AWS.submit_form($('#question_form'), $(this)); return false;"><?php echo _t('确认发帖'); ?></a>
 							</div>
 						</div>
 					</form>

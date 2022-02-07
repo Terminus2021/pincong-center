@@ -10,7 +10,7 @@
 		<div class="row">
 			<div class="col-sm-12 aw-global-tips">
 				<div class="alert alert-warning fade in">
-					<a href="<?php echo url_rewrite(); ?>/question/<?php echo $this->redirected_from['id']; ?>"><?php echo CF::title($this->redirected_from); ?></a> <?php echo _t('已与本问题合并'); ?>
+					<a href="<?php echo url_rewrite(); ?>/question/<?php echo $this->redirected_from['id']; ?>"><?php echo CF::title($this->redirected_from); ?></a> <?php echo _t('已与本主题合并'); ?>
 				</div>
 			</div>
 		</div>
@@ -21,7 +21,7 @@
 		<div class="row">
 			<div class="col-sm-12 aw-global-tips">
 				<div class="alert alert-danger fade in">
-					<?php echo _t('本问题已被合并到'); ?>: <a href="<?php echo url_rewrite(); ?>/question/id-<?php echo $this->redirect_info['id']; ?>__rf-<?php echo $this->question_info['id']; ?>"><?php echo CF::title($this->redirect_info); ?></a>
+					<?php echo _t('本主题已被合并到'); ?>: <a href="<?php echo url_rewrite(); ?>/question/id-<?php echo $this->redirect_info['id']; ?>__rf-<?php echo $this->question_info['id']; ?>"><?php echo CF::title($this->redirect_info); ?></a>
 				</div>
 			</div>
 		</div>
@@ -32,7 +32,7 @@
 		<div class="row">
 			<div class="aw-content-wrap clearfix">
 				<div class="col-sm-12 col-md-9 aw-main-content">
-					<!-- 话题bar -->
+					<!-- 区块bar -->
 					<div class="aw-mod aw-topic-bar" data-type="question" data-id="<?php echo $this->question_info['id']; ?>" data-category-id="<?php echo $this->question_info['category_id']; ?>">
 						<div class="tag-bar clearfix">
 						<?php if ($this->topics) { ?>
@@ -43,12 +43,12 @@
 							<?php } ?>
 						<?php } else if (!$this->user_id) { ?>
 							<span class="topic-tag">
-								<a href="<?php echo url_rewrite(); ?>/login/"><span class="icon-inverse"><i class="icon icon-edit"></i> <?php echo _t('添加话题'); ?></span></a>
+								<a href="<?php echo url_rewrite(); ?>/login/"><span class="icon-inverse"><i class="icon icon-edit"></i> <?php echo _t('添加区块'); ?></span></a>
 							</span>
 						<?php } ?>
 
 						<?php if ($this->user_id AND ($this->user_info['permission']['edit_question_topic'] OR $this->user_id == $this->question_info['uid'])) { ?>
-							<span class="icon-inverse aw-edit-topic"><i class="icon icon-edit"></i> <?php if (!$this->topics) { ?><?php echo _t('添加话题'); ?><?php } ?></span>
+							<span class="icon-inverse aw-edit-topic"><i class="icon icon-edit"></i> <?php if (!$this->topics) { ?><?php echo _t('添加区块'); ?><?php } ?></span>
 						<?php } ?>
 
 							<div class="operate clearfix">
@@ -87,7 +87,7 @@
 
 										<?php if ($this->user_info['permission']['is_moderator']) { ?>
 											<li>
-												<a href="javascript:;" onclick="AWS.confirm('<?php echo _t('确认删除?'); ?>', function(){AWS.ajax_request(G_BASE_URL + '/question/ajax/remove_question/', 'question_id=<?php echo $this->question_info['id']; ?>');});"><?php echo _t('删除问题'); ?></a>
+												<a href="javascript:;" onclick="AWS.confirm('<?php echo _t('确认删除?'); ?>', function(){AWS.ajax_request(G_BASE_URL + '/question/ajax/remove_question/', 'question_id=<?php echo $this->question_info['id']; ?>');});"><?php echo _t('删除主题'); ?></a>
 											</li>
 											<li>
 												<a href="javascript:;" onclick="AWS.prompt('<?php echo _t('请输入新的 UID'); ?>', '<?php echo $this->question_info['uid']; ?>', function(text){AWS.ajax_request(G_BASE_URL + '/content/ajax/change_uid/', 'uid=' + encodeURIComponent(text) + '&item_type=question&item_id=<?php echo $this->question_info['id']; ?>');});"><?php echo _t('变更作者'); ?></a>
@@ -135,7 +135,7 @@
 
 						</div>
 					</div>
-					<!-- end 话题bar -->
+					<!-- end 区块bar -->
 					<div class="aw-mod aw-question-detail aw-item" <?php if ($this->user_info['permission']['is_moderator']) { ?>data-item-reputation="<?php echo $this->question_info['reputation']; ?>"<?php } ?>>
 						<div class="mod-head">
 							<h1>
@@ -242,7 +242,7 @@
 						</div>
 					</div>
 
-					<!-- 问题回复 -->
+					<!-- 主题回复 -->
 					<div class="aw-mod">
 						<?php if ($this->pagination) { ?>
 							<div class="clearfix"><?php TPL::include('global/pagination.tpl.htm'); ?></div>
@@ -302,7 +302,7 @@
 							<div class="clearfix"><?php TPL::include('global/pagination.tpl.htm'); ?></div>
 						<?php } ?>
 					</div>
-					<!-- end 问题回复 -->
+					<!-- end 主题回复 -->
 
 					<!-- 回应编辑器 -->
 					<div class="aw-mod aw-reply-box question">
@@ -312,9 +312,9 @@
 						<?php } else if (!$this->user_id) { ?>
 						<p align="center"><?php echo _t('要发言请先<a href="%s0">登录</a>或<a href="%s1">注册</a>', array(url_rewrite() . '/login/', url_rewrite(). '/register/')); ?></p>
 						<?php } else if ($this->user_answered) { ?>
-						<p align="center"><?php echo _t('一个问题只能回复一次'); ?></p>
+						<p align="center"><?php echo _t('一个主题只能回复一次'); ?></p>
 						<?php } else if ((S::get('answer_self_question') == 'N') AND ($this->user_id == $this->question_info['uid'])) { ?>
-						<p align="center"><?php echo _t('不能回复自己发布的问题, 你可以修改问题内容'); ?></p>
+						<p align="center"><?php echo _t('不能回复自己发布的主题, 你可以修改主题内容'); ?></p>
 						<?php } else { ?>
 						<form action="<?php echo url_rewrite(); ?>/publish/ajax/publish_answer/" onsubmit="return false;" method="post" id="answer_form" class="question_answer_form">
 						<input type="hidden" name="question_id" value="<?php echo $this->question_info['id']; ?>" />
@@ -369,10 +369,10 @@
 				</div>
 				<!-- 侧边栏 -->
 				<div class="col-sm-12 col-md-3 aw-side-bar">
-					<!-- 发起人 -->
+					<!-- 楼主 -->
 					<div class="aw-mod">
 						<div class="mod-head">
-							<h3><?php echo _t('发起人'); ?></h3>
+							<h3><?php echo _t('楼主'); ?></h3>
 						</div>
 						<div class="mod-body">
 							<div class="user-detail">
@@ -392,7 +392,7 @@
 							<p class="signature"><?php echo UF::signature($this->question_info['user_info']); ?></p>
 						</div>
 					</div>
-					<!-- end 发起人 -->
+					<!-- end 楼主 -->
 
 					<?php if ($this->related_posts) { ?>
 					<!-- 相关 -->
@@ -498,7 +498,7 @@ function reply_callback() {
 	$('.question_answer_form').detach();
 	if ($('.aw-reply-box.question').length)
 	{
-		$('.aw-reply-box').append('<p align="center"><?php echo _t('一个问题只能回复一次'); ?></p>');
+		$('.aw-reply-box').append('<p align="center"><?php echo _t('一个主题只能回复一次'); ?></p>');
 	}
 <?php } ?>
 	$('.aw-mod.aw-reply-box textarea').css('height', '329px');

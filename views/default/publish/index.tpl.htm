@@ -12,8 +12,8 @@
 					<ul class="nav nav-tabs aw-nav-tabs active">
 						<li><a href="<?php echo url_rewrite(); ?>/publish/video/"><?php echo _t('影片'); ?></a></li>
 						<li><a href="<?php echo url_rewrite(); ?>/publish/article/"><?php echo _t('文章'); ?></a></li>
-						<li class="active"><a href="<?php echo url_rewrite(); ?>/publish/"><?php echo _t('问题'); ?></a></li>
-						<h2 class="hidden-xs"><i class="icon icon-ask"></i> <?php echo _t('发起'); ?></h2>
+						<li class="active"><a href="<?php echo url_rewrite(); ?>/publish/"><?php echo _t('主题'); ?></a></li>
+						<h2 class="hidden-xs"><i class="icon icon-ask"></i> <?php echo _t('发帖'); ?></h2>
 					</ul>
 					<!-- end tab 切换 -->
 					<form action="<?php echo url_rewrite(); ?>/<?php if ($this->thread_info['id']) { ?>modify/ajax/modify_question/<?php } else { ?>publish/ajax/publish_question/<?php } ?>" method="post" id="question_form" onsubmit="return false;">
@@ -30,8 +30,8 @@
 								<?php if (isset($_POST['ask_user_name'])) { ?>
 								<h3><?php echo _t('向 %s 提问', htmlspecialchars($_POST['ask_user_name'])); ?></h3>
 								<?php } ?>
-								<h3><?php echo _t('问题标题'); ?>:</h3>
-								<!-- 问题标题 -->
+								<h3><?php echo _t('主题标题'); ?>:</h3>
+								<!-- 主题标题 -->
 								<div class="aw-publish-title<?php if (S::get('category_enable') == 'N') { ?> active<?php } ?>">
 									<input type="text" name="title" value="<?php echo FORMAT::text($this->thread_info['title']); ?>" class="form-control" />
 									<?php if (!$this->thread_info['id'] AND S::get('category_enable') != 'N') { ?>
@@ -43,9 +43,9 @@
 									</div>
 									<?php } ?>
 								</div>
-								<!-- end 问题标题 -->
+								<!-- end 主题标题 -->
 
-								<h3><?php echo _t('问题补充'); ?>:</h3>
+								<h3><?php echo _t('主题补充'); ?>:</h3>
 								<div class="aw-mod aw-editor-box">
 									<div class="mod-head">
 										<div class="wmd-panel">
@@ -57,7 +57,7 @@
 									</div>
 								</div>
 								<?php if (!$this->thread_info['id']) { ?>
-								<h3><?php echo _t('添加话题'); ?>:</h3>
+								<h3><?php echo _t('添加区块'); ?>:</h3>
 								<div class="aw-topic-bar" data-type="publish">
 									<div class="tag-bar clearfix">
 										<?php if ($_GET['topic_title']) { ?>
@@ -70,7 +70,7 @@
 										</span>
 										<?php } ?>
 
-										<span class="aw-edit-topic icon-inverse"><i class="icon icon-edit"></i> <?php echo _t('编辑话题'); ?></span>
+										<span class="aw-edit-topic icon-inverse"><i class="icon icon-edit"></i> <?php echo _t('编辑区块'); ?></span>
 									</div>
 								</div>
 
@@ -92,7 +92,7 @@
 								<span class="aw-anonymity">
 									<?php if ($this->thread_info['id']) { ?>
 									<label><input type="checkbox" class="pull-left" value="1" name="do_delete" />
-										<?php echo _t('删除问题'); ?>&nbsp;</label>
+										<?php echo _t('删除主题'); ?>&nbsp;</label>
 									<?php } ?>
 
 									<?php if (!$this->thread_info['id'] AND $this->user_info['permission']['post_anonymously']) { ?>
@@ -101,7 +101,7 @@
 									<?php } ?>
 
 								</span>
-								<a class="btn btn-large btn-success btn-publish-submit" id="publish_submit" onclick="AWS.submit_form($('#question_form'), $(this)); return false;"><?php echo _t('确认发起'); ?></a>
+								<a class="btn btn-large btn-success btn-publish-submit" id="publish_submit" onclick="AWS.submit_form($('#question_form'), $(this)); return false;"><?php echo _t('确认发帖'); ?></a>
 							</div>
 						</div>
 					</form>

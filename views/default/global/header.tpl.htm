@@ -78,7 +78,7 @@
 				<!-- end 登录&注册栏 -->
 			</div>
 			<!-- end 用户栏 -->
-			<!-- 发起 -->
+			<!-- 发帖 -->
 			<?php if ($this->user_id) { ?>
 			<?php
 				$publish_url_params = '';
@@ -103,12 +103,12 @@
 				<a href="javascript:;" class="btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon icon-ask"></i> <?php echo _t('发帖'); ?></a>
 				<ul class="dropdown-menu">
 					<li><a href="<?php echo url_rewirte(); ?>/publish/article/<?php echo $publish_url_params; ?>"><?php echo _t('文章帖'); ?></a></li>
-					<li><a href="<?php echo url_rewrite(); ?>/publish/<?php echo $publish_url_params; ?>"><?php echo _t('问题帖'); ?></a></li>
+					<li><a href="<?php echo url_rewrite(); ?>/publish/<?php echo $publish_url_params; ?>"><?php echo _t('主题帖'); ?></a></li>
 					<li><a href="<?php echo url_rewrite(); ?>/publish/video/<?php echo $publish_url_params; ?>"><?php echo _t('视频帖'); ?></a></li>
 				</ul>
 			</div>
 			<?php } ?>
 
-			<!-- end 发起 -->
+			<!-- end 发帖 -->
 		</div>
 	</div>

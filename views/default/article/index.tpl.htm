@@ -42,12 +42,12 @@
 							<?php } ?>
 						<?php } else if (!$this->user_id) { ?>
 							<span class="topic-tag">
-								<a href="<?php echo url_rewrite(); ?>/login/"><span class="icon-inverse"><i class="icon icon-edit"></i> <?php echo _t('添加话题'); ?></span></a>
+								<a href="<?php echo url_rewrite(); ?>/login/"><span class="icon-inverse"><i class="icon icon-edit"></i> <?php echo _t('添加区块'); ?></span></a>
 							</span>
 						<?php } ?>
 
 						<?php if ($this->user_id AND ($this->user_info['permission']['edit_question_topic'] OR $this->user_id == $this->article_info['uid'])) { ?>
-							<span class="icon-inverse aw-edit-topic"><i class="icon icon-edit"></i> <?php if (!$this->topics) { ?><?php echo _t('添加话题'); ?><?php } ?></span>
+							<span class="icon-inverse aw-edit-topic"><i class="icon icon-edit"></i> <?php if (!$this->topics) { ?><?php echo _t('添加区块'); ?><?php } ?></span>
 						<?php } ?>
 
 							<div class="operate clearfix">
@@ -319,10 +319,10 @@
 				</div>
 				<!-- 侧边栏 -->
 				<div class="col-sm-12 col-md-3 aw-side-bar">
-					<!-- 发起人 -->
+					<!-- 楼主 -->
 					<div class="aw-mod">
 						<div class="mod-head">
-							<h3><?php echo _t('发起人'); ?></h3>
+							<h3><?php echo _t('楼主'); ?></h3>
 						</div>
 						<div class="mod-body">
 							<div class="user-detail">
@@ -345,7 +345,7 @@
 
 						</div>
 					</div>
-					<!-- end 发起人 -->
+					<!-- end 楼主 -->
 
 					<?php if ($this->related_posts) { ?>
 					<!-- 相关 -->

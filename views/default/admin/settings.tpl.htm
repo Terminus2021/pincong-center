@@ -856,7 +856,7 @@
 										<input type="radio" name="upload_enable" value="N"<?php if ($this->setting['upload_enable'] != 'Y') { ?> checked="checked"<?php } ?> /> <?php echo _t('否'); ?>
 									</label>
 								</div>
-								<div class="help-block"><?php echo _t('允许上传头像/话题图片'); ?></div>
+								<div class="help-block"><?php echo _t('允许上传头像/区块图片'); ?></div>
 							</div>
 						</div>
 					</td>
@@ -1205,7 +1205,7 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('发布问题'); ?>:</span>
+							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('发布主题'); ?>:</span>
 							<div class="col-sm-5 col-xs-8">
 								<input name="currency_system_config_new_question" type="text" class="form-control" value="<?php echo htmlspecialchars($this->setting['currency_system_config_new_question']); ?>"/>
 							</div>
@@ -1364,7 +1364,7 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('用户对每个问题的回复限制'); ?>:</span>
+							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('用户对每个主题的回复限制'); ?>:</span>
 							<div class="col-sm-6 col-xs-8">
 								<label><input type="radio" name="answer_unique" value="Y"<?php if ($this->setting['answer_unique'] == 'Y') { ?> checked="checked"<?php } ?> /><?php echo _t('只允许回复一次'); ?></label>
 								<label class="col-md-offset-1"><input type="radio" name="answer_unique" value="N"<?php if ($this->setting['answer_unique'] != 'Y') { ?> checked="checked"<?php } ?> /><?php echo _t('不限制'); ?></label>
@@ -1375,7 +1375,7 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('允许用户回复自己发起的问题'); ?>:</span>
+							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('允许用户回复自己发帖的主题'); ?>:</span>
 							<div class="col-sm-6 col-xs-8">
 								<div class="btn-group mod-btn">
 									<label type="button" class="btn mod-btn-color">
@@ -1393,7 +1393,7 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('要求问题包含问号'); ?>:</span>
+							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('要求主题包含问号'); ?>:</span>
 							<div class="col-sm-6 col-xs-8">
 								<div class="btn-group mod-btn">
 									<label type="button" class="btn mod-btn-color">
@@ -1425,7 +1425,7 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('发帖最小话题数量限制'); ?>:</span>
+							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('发帖最小区块数量限制'); ?>:</span>
 							<div class="col-sm-5 col-xs-8">
 								<input name="topics_limit_min" class="form-control" type="text" value="<?php echo htmlspecialchars($this->setting['topics_limit_min']); ?>"/>
 
@@ -1437,7 +1437,7 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('发帖最大话题数量限制'); ?>:</span>
+							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('发帖最大区块数量限制'); ?>:</span>
 							<div class="col-sm-5 col-xs-8">
 								<input name="topics_limit_max" class="form-control" type="text" value="<?php echo htmlspecialchars($this->setting['topics_limit_max']); ?>"/>
 
@@ -1449,7 +1449,7 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('话题标题最大字节数限制'); ?>:</span>
+							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('区块标题最大字节数限制'); ?>:</span>
 							<div class="col-sm-5 col-xs-8">
 								<input name="topic_title_limit" type="text" class="form-control" value="<?php echo htmlspecialchars($this->setting['topic_title_limit']); ?>"/>
 
@@ -1487,7 +1487,7 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('问题正文最小字数限制'); ?>:</span>
+							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('主题正文最小字数限制'); ?>:</span>
 							<div class="col-sm-5 col-xs-8">
 								<input name="question_body_length_min" class="form-control" type="text" value="<?php echo htmlspecialchars($this->setting['question_body_length_min']); ?>"/>
 
@@ -1499,7 +1499,7 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('问题正文最大字数限制'); ?>:</span>
+							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('主题正文最大字数限制'); ?>:</span>
 							<div class="col-sm-5 col-xs-8">
 								<input name="question_body_length_max" class="form-control" type="text" value="<?php echo htmlspecialchars($this->setting['question_body_length_max']); ?>"/>
 
@@ -1585,7 +1585,7 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('问题回复最小字数限制'); ?>:</span>
+							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('主题回复最小字数限制'); ?>:</span>
 							<div class="col-sm-5 col-xs-8">
 								<input name="question_reply_length_min" class="form-control" type="text" value="<?php echo htmlspecialchars($this->setting['question_reply_length_min']); ?>"/>
 
@@ -1597,7 +1597,7 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('问题回复最大字数限制'); ?>:</span>
+							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('主题回复最大字数限制'); ?>:</span>
 							<div class="col-sm-5 col-xs-8">
 								<input name="question_reply_length_max" class="form-control" type="text" value="<?php echo htmlspecialchars($this->setting['question_reply_length_max']); ?>"/>
 
@@ -1944,7 +1944,7 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('推荐用户和话题数量'); ?>:</span>
+							<span class="col-sm-4 col-xs-3 control-label"><?php echo _t('推荐用户和区块数量'); ?>:</span>
 							<div class="col-sm-5 col-xs-8">
 								<input name="recommend_users_number" class="form-control" type="text" value="<?php echo htmlspecialchars($this->setting['recommend_users_number']); ?>"/>
 							</div>

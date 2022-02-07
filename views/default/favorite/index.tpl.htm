@@ -35,11 +35,11 @@
 										</div>
 										<!-- end 回答 -->
 										<?php } else if ($val['type'] == 'question') { ?>
-										<!-- 问题 -->
+										<!-- 主题 -->
 										<h4>
 											<a href="<?php echo url_rewrite(); ?>/question/<?php echo $val['item']['id']; ?>"><?php if (!$val['item']['title']) { ?><s class="aw-deleted"><?php echo _t('已删除'); ?></s><?php } else { ?><?php echo FORMAT::text($val['item']['title'], true); ?><?php } ?></a>
 										</h4>
-										<!-- end 问题 -->
+										<!-- end 主题 -->
 										<?php } else if ($val['type'] == 'article') { ?>
 										<!-- 文章 -->
 										<h4>

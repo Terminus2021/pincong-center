@@ -6,13 +6,13 @@
 <?php if ($val['item_type'] == 'question') { ?>
 <?php if (!$val['title']) continue; ?>
 
-<!-- 问题 -->
+<!-- 主题 -->
 <div class="aw-item" data-category-id="<?php echo $val['item_category_id']; ?>">
 	<div class="mod-head">
 		<a data-id="<?php echo $val['user_info']['uid']; ?>" class="aw-user-img aw-border-radius-5" href="<?php echo UF::url($val['user_info']); ?>"><img src="<?php echo UF::avatar($val['user_info'], 'mid'); ?>" alt="" /></a>
 		<p class="aw-small-text">
 			<a class="aw-user-name" href="<?php echo UF::url($val['user_info']); ?>"><?php echo UF::name($val['user_info']); ?></a>
-			<?php echo _t('发起了问题'); ?>
+			<?php echo _t('发帖了主题'); ?>
 			•
 			<?php echo _t('%s 个回复', $val['reply_count']); ?>
 		</p>
@@ -81,7 +81,7 @@
 		<!-- end 讨论 -->
 	</div>
 </div>
-<!-- end 问题 -->
+<!-- end 主题 -->
 
 <?php } else if ($val['item_type'] == 'question_reply') { ?>
 <?php if ($val['fold']) continue; ?>
@@ -93,7 +93,7 @@
 		<a data-id="<?php echo $val['user_info']['uid']; ?>" class="aw-user-img aw-border-radius-5" href="<?php echo UF::url($val['user_info']); ?>"><img src="<?php echo UF::avatar($val['user_info'], 'mid'); ?>" alt="" /></a>
 		<p class="aw-small-text">
 			<a class="aw-user-name" href="<?php echo UF::url($val['user_info']); ?>"><?php echo UF::name($val['user_info']); ?></a>
-			<?php echo _t('回复了问题'); ?>
+			<?php echo _t('回复了主题'); ?>
 		</p>
 		<h2 style="font-size:16px;">
 			<a href="<?php echo url_rewrite(); ?>/question/<?php echo $val['thread_info']['id']; ?>"><?php echo CF::title($val['thread_info']); ?></a>

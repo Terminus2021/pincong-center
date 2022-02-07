@@ -6,8 +6,8 @@
 		<div class="mod-head">
 			<h3>
 				<ul class="nav nav-tabs">
-					<li class="active"><a href="#list" data-toggle="tab"><?php echo _t('话题管理'); ?></a></li>
-					<li><a href="<?php echo url_rewrite(); ?>/admin/topic/edit/"><?php echo _t('新建话题'); ?></a></li>
+					<li class="active"><a href="#list" data-toggle="tab"><?php echo _t('区块管理'); ?></a></li>
+					<li><a href="<?php echo url_rewrite(); ?>/admin/topic/edit/"><?php echo _t('新建区块'); ?></a></li>
 					<li><a href="#search" data-toggle="tab"><?php echo _t('搜索'); ?></a></li>
 				</ul>
 			</h3>
@@ -28,7 +28,7 @@
 						<thead>
 							<tr>
 								<th><input type="checkbox" class="check-all"></th>
-								<th><?php echo _t('话题标题'); ?></th>
+								<th><?php echo _t('区块标题'); ?></th>
 								<th><?php echo _t('讨论'); ?></th>
 								<th><?php echo _t('关注'); ?></th>
 								<th><?php echo _t('合并'); ?></th>
@@ -53,7 +53,7 @@
 									<?php if ($topic_info['topic_lock']) { ?>
 									<a onclick="AWS.ajax_request(G_BASE_URL + '/admin/ajax/lock_topic/', 'topic_id=<?php echo $topic_info['topic_id']; ?>&status=0');" title="<?php echo _t('解除锁定'); ?>" data-toggle="tooltip" class="icon icon-lock md-tip"></a>
 									<?php } else { ?>
-									<a href="javascript:;" onclick="AWS.ajax_request(G_BASE_URL + '/admin/ajax/lock_topic/', 'topic_id=<?php echo $topic_info['topic_id']; ?>&status=1');" data-toggle="tooltip" title="<?php echo _t('锁定话题'); ?>" class="icon icon-unlock md-tip"></a>
+									<a href="javascript:;" onclick="AWS.ajax_request(G_BASE_URL + '/admin/ajax/lock_topic/', 'topic_id=<?php echo $topic_info['topic_id']; ?>&status=1');" data-toggle="tooltip" title="<?php echo _t('锁定区块'); ?>" class="icon icon-unlock md-tip"></a>
 									<?php } ?>
 								</td>
 
@@ -69,8 +69,8 @@
 				<div class="mod-table-foot">
 					<?php TPL::include('global/pagination.tpl.htm'); ?>
 
-					<a class="btn btn-danger" onclick="$('#action').val('remove'); AWS.submit_form($('#batchs_form'));"><?php echo _t('删除话题'); ?></a>
-					<a class="btn btn-primary" onclick="$('#action').val('lock'); AWS.submit_form($('#batchs_form'));"><?php echo _t('锁定话题'); ?></a>
+					<a class="btn btn-danger" onclick="$('#action').val('remove'); AWS.submit_form($('#batchs_form'));"><?php echo _t('删除区块'); ?></a>
+					<a class="btn btn-primary" onclick="$('#action').val('lock'); AWS.submit_form($('#batchs_form'));"><?php echo _t('锁定区块'); ?></a>
 				</div>
 			</div>
 

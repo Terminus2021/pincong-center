@@ -13,12 +13,12 @@
 			</li>
 			<li>
 				<a href="<?php echo url_rewrite(); ?>/topic/channel-focus">
-					<?php echo _t('我关注的话题'); ?>
+					<?php echo _t('我关注的区块'); ?>
 				</a>
 			</li>
 			<li>
 				<a href="<?php echo url_rewrite(); ?>/home/invite/"<?php if ($_GET['app'] == 'home' AND $_GET['act'] == 'invite') { ?> class="active"<?php } ?>>
-					<?php echo _t('邀请我回复的问题'); ?><?php if ($this->user_info['invite_count']) { ?><span class="badge"><?php echo $this->user_info['invite_count']; ?></span><?php } ?>
+					<?php echo _t('邀请我回复的主题'); ?><?php if ($this->user_info['invite_count']) { ?><span class="badge"><?php echo $this->user_info['invite_count']; ?></span><?php } ?>
 				</a>
 			</li>
 		</ul>
@@ -28,7 +28,7 @@
 <div class="aw-mod side-nav">
 	<div class="mod-body">
 		<ul>
-			<li><a href="<?php echo url_rewrite(); ?>/topic/"> <?php echo _t('所有话题'); ?></a></li>
+			<li><a href="<?php echo url_rewrite(); ?>/topic/"> <?php echo _t('所有区块'); ?></a></li>
 			<li><a href="<?php echo url_rewrite(); ?>/people/"> <?php echo _t('所有用户'); ?></a></li>
 		</ul>
 	</div>

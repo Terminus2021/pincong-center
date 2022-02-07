@@ -8,7 +8,7 @@
 		<span class="pull-right">
 			<a class="aw-small-text" onclick="AWS.User.question_invite_delete($(this).parents('div.aw-item'), <?php echo $val['question_invite_id']; ?>)"><?php echo _t('忽略'); ?></a>
 		</span>
-		<a class="aw-user-name" href="<?php echo UF::url($val['user_info']); ?>" data-id="<?php echo $val['user_info']['uid']; ?>"><?php echo UF::name($val['user_info']); ?></a> <?php echo _t('邀请你回复这个问题'); ?>
+		<a class="aw-user-name" href="<?php echo UF::url($val['user_info']); ?>" data-id="<?php echo $val['user_info']['uid']; ?>"><?php echo UF::name($val['user_info']); ?></a> <?php echo _t('邀请你回复这个主题'); ?>
 	</p>
 </div>
 <?php } ?>
