@@ -35,7 +35,7 @@ $config[] = array(
 
 		array(
 			'id' => 'SETTINGS_CURRENCY',
-			'title' => _t('声望代币'),
+			'title' => _t('积分声望'),
 			'url' => '/admin/settings/category-currency'
 		),
 
@@ -59,7 +59,7 @@ $config[] = array(
 
 		array(
 			'id' => 'SETTINGS_VIDEO',
-			'title' => _t('影片处理'),
+			'title' => _t('视频处理'),
 			'url' => '/admin/settings/category-video'
 		),
 	)
@@ -101,13 +101,13 @@ $config[] = array(
 
 		array(
 			'id' => 303,
-			'title' => _t('话题列表'),
+			'title' => _t('区块列表'),
 			'url' => '/admin/topic/list/'
 		),
 
 		array(
 			'id' => 301,
-			'title' => _t('问题列表'),
+			'title' => _t('主题列表'),
 			'url' => '/admin/question/question_list/'
 		),
 
@@ -187,7 +187,7 @@ $config[] = array(
 );
 
 $config[] = array(
-	'title' => _t('广告'),
+	'title' => _t('广告位'),
 	'cname' => 'reply',
 	'children' => array(
 		array(

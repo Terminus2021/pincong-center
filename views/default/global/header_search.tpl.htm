@@ -1,0 +1,31 @@
+<?php TPL::include('global/header_meta.tpl.htm'); ?>
+
+<body>
+<?php echo S::get('custom_body_top'); ?>
+
+	<div class="aw-top-menu-wrap">
+		<div class="container">
+			<!-- logo -->
+			<div class="aw-logo hidden-xs">
+				<a href="<?php echo base_url(); ?>/" style="background:url('<?php echo S::get('logo_url'); ?>') no-repeat;"></a>
+			</div>
+			<!-- end logo -->
+			<div class="aw-search-box  hidden-xs hidden-sm">
+				<form class="navbar-search" action="search/" id="global_search_form" method="post">
+					<?php if(!$this->keyword){ ?><label class="oldPwdTip aw-search-query-label"><?php _e('搜索问题、话题或人'); ?>...</label> <?php } ?>
+					<input class="form-control search-query" type="text" value="<?php if($this->keyword){echo $this->keyword;}?>"  autocomplete="off" name="q" id="aw-search-query" onfocus="hideOldPwdTip('aw-search-query');" onblur="toggleOldPwdTip('aw-search-query',this.value);" />
+					<span title="<?php _e('搜索'); ?>" id="global_search_btns" onClick="$('#global_search_form').submit();"><i class="icon icon-search"></i></span>
+					<div class="aw-dropdown">
+						<div class="mod-body">
+							<p class="title"><?php _e('输入关键字进行搜索'); ?></p>
+							<ul class="aw-dropdown-list collapse"></ul>
+							<p class="search"><span><?php _e('搜索'); ?>:</span><a onClick="$('#global_search_form').submit();"></a></p>
+						</div>
+						<div class="mod-footer">
+							<a href="<?php if (get_setting('quick_publish') == 'Y' && $this->user_id) { ?>javascript:;<?php } else { ?>publish<?php } ?>" onClick="$('#header_publish').click();" class="pull-right btn btn-mini btn-success publish"><?php _e('发起问题'); ?></a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
